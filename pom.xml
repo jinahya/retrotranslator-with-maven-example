@@ -9,39 +9,7 @@
   <version>0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <dependencyManagement />
-  <dependencies>
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.1.3</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>2.4</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.4</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcprov-jdk12</artifactId>
-      <version>130</version>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>6.8.21</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  <dependencies/>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -171,7 +139,7 @@
 
   <!-- More Project Information -->
   <name>${project.artifactId}</name>
-  <description>an implementation of retrotranslator-with-maven-example</description>
+  <description>an example using retrotranslator</description>
   <url>http://jinahya.github.io/retrotranslator-with-maven-example/sites/${project.version}</url>
   <inceptionYear>2015</inceptionYear>
   <licenses>

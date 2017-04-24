@@ -1,15 +1,50 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>com.github.jinahya</groupId>
+    <artifactId>jinahya-parent</artifactId>
+    <version>0.7.6</version>
+  </parent>
 
-  <!-- The Basics -->
   <groupId>com.github.jinahya</groupId>
   <artifactId>retrotranslator-with-maven-example</artifactId>
-  <version>0.2-SNAPSHOT</version>
+  <version>0.1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <dependencyManagement />
-  <dependencies />
+
+  <name>${project.artifactId}</name>
+  <description>an example using retrotranslator</description>
+  <url>http://jinahya.github.io/retrotranslator-with-maven-example/sites/${project.version}</url>
+  <inceptionYear>2015</inceptionYear>
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>jinahya</id>
+      <name>Jin Kwon</name>
+      <email>jinahya@gmail.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git@github.com:jinahya/retrotranslator-with-maven-example.git</connection>
+    <developerConnection>scm:git:git@github.com:jinahya/retrotranslator-with-maven-example.git</developerConnection>
+    <url>https://github.com/jinahya/${project.artifactId}</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/jinahya/${project.artifactId}/issues</url>
+  </issueManagement>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -19,11 +54,20 @@
     <maven.compiler.testTarget>1.8</maven.compiler.testTarget>
     <project.build.outputDirectory.retrotranslated13>${project.build.directory}/classes-retrotranslated13</project.build.outputDirectory.retrotranslated13>
     <project.build.outputDirectory.retrotranslated14>${project.build.directory}/classes-retrotranslated14</project.build.outputDirectory.retrotranslated14>
+    <version.retrotranslator-transformer>1.2.9</version.retrotranslator-transformer>
   </properties>
+  
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>net.sf.retrotranslator</groupId>
+        <artifactId>retrotranslator-transformer</artifactId>
+        <version>${version.retrotranslator-transformer}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-  <!-- Build Settings -->
   <build>
-    <pluginManagement />
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -71,14 +115,14 @@
           <dependency>
             <groupId>net.sf.retrotranslator</groupId>
             <artifactId>retrotranslator-transformer</artifactId>
-            <version>1.2.9</version>
+            <version>${version.retrotranslator-transformer}</version>
           </dependency>
         </dependencies>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.6</version>
+        <version>3.0.2</version>
         <executions>
           <execution>
             <id>retrotranslated13</id>
@@ -104,60 +148,6 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.5.2</version>
-        <configuration>
-          <tagNameFormat>@{project.version}</tagNameFormat>
-          <pushChanges>false</pushChanges>
-          <localCheckout>true</localCheckout>
-          <goals>install</goals>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
-  <reporting />
-
-  <!-- More Project Information -->
-  <name>${project.artifactId}</name>
-  <description>an example using retrotranslator</description>
-  <url>http://jinahya.github.io/retrotranslator-with-maven-example/sites/${project.version}</url>
-  <inceptionYear>2015</inceptionYear>
-  <licenses>
-    <license>
-      <name>Apache 2</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-      <comments>A business-friendly OSS license</comments>
-    </license>
-  </licenses>
-  <organization />
-  <developers>
-    <developer>
-      <id>jinahya</id>
-      <name>Jin Kwon</name>
-      <email>jinahya@gmail.com</email>
-    </developer>
-  </developers>
-  <contributors />
-
-  <!-- Environment Settings -->
-  <issueManagement>
-    <system>GitHub Issues</system>
-    <url>https://github.com/jinahya/${project.artifactId}/issues</url>
-  </issueManagement>
-  <ciManagement />
-  <mailingLists />
-  <scm>
-    <connection>scm:git:git@github.com:jinahya/retrotranslator-with-maven-example.git</connection>
-    <developerConnection>scm:git:git@github.com:jinahya/retrotranslator-with-maven-example.git</developerConnection>
-    <url>https://github.com/jinahya/retrotranslator-with-maven-example</url>
-    <tag>HEAD</tag>
-  </scm>
-  <prerequisites />
-  <repositories />
-  <pluginRepositories />
-  <distributionManagement />
-  <profiles />
 </project>

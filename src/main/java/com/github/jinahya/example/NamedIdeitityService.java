@@ -13,10 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 package com.github.jinahya.example;
-
 
 /**
  *
@@ -24,7 +21,6 @@ package com.github.jinahya.example;
  * @param <T>
  */
 public interface NamedIdeitityService<T extends NamedIdentity>
-    extends IdentityService<T> {
+        extends IdentityService<T> {
 
 }
-
